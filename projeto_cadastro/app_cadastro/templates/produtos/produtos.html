@@ -1,0 +1,28 @@
+{% extends 'produtos/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h2 class="mb-5 mt-5">Produtos Cadastrados</h2>
+    <table class = "table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>descricao</th>
+            <th>preco</th>
+            <th>validade</th>
+        </tr>
+
+        <!--é o loop para cadastrar os produtos-->
+        {% for produto in produtos %}       
+        <tr>
+            <td>{{produto.id_produto}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.preco}}</td>
+            <td>{{produto.validade}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
